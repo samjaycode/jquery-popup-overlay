@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>jQuery Popup Overlay</title>
+    <title>jQuery Popup Overlay With Image</title>
     <meta name="description" content="jQuery plugin for responsive and accessible modal windows and tooltips." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -43,8 +43,8 @@
 
         <h2>&nbsp;</h2>
         <p>
-            <a href="https://github.com/vast-engineering/jquery-popup-overlay/archive/gh-pages.zip" class="btn btn-primary btn-success btn-lg"><span class="fontawesome-download-alt"></span> Download</a>
-            <a href="https://github.com/vast-engineering/jquery-popup-overlay" class="btn btn-lg btn-default"><span class="fontawesome-github"></span> View project on GitHub</a>
+            <a href="https://github.com/samjaycode/jquery-popup-overlay/archive/gh-pages.zip" class="btn btn-primary btn-success btn-lg"><span class="fontawesome-download-alt"></span> Download</a>
+            <a href="https://github.com/samjaycode/jquery-popup-overlay" class="btn btn-lg btn-default"><span class="fontawesome-github"></span> View project on GitHub</a>
         </p>
         <p>&nbsp;</p>
 
@@ -52,7 +52,7 @@
 
     <footer class="col-md-10 col-md-offset-1" role="contentinfo">
 
-        <iframe src="http://ghbtns.com/github-btn.html?user=vast-engineering&repo=jquery-popup-overlay&type=watch&size=small&count=true"
+        <iframe src="http://ghbtns.com/github-btn.html?user=samjaycode&repo=jquery-popup-overlay&type=watch&size=small&count=true"
             allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
 
         <p class="text-muted"><small>Released under the <a href="http://opensource.org/licenses/MIT">MIT</a> license.</small></p>
@@ -63,190 +63,15 @@
 
 
 
-
-
-<!-- Set defaults -->
-<script>
-$(document).ready(function () {
-    $.fn.popup.defaults.pagecontainer = '.container'
-});
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Basic --><script>
-$(document).ready(function () {
-    $('#basic').popup();
-});
-</script>
-
-
-
-
-
-
-
-
-
-
-<!-- Fade --><script>
-$(document).ready(function () {
-
-    $('#fade').popup({
-      transition: 'all 0.3s'
-    });
-
-});
-</script>
-
-
-
-
-
-
-
-
-
-<!-- Fade & scale --><script>
-$(document).ready(function () {
-
-    $('#fadeandscale').popup({
-        pagecontainer: '.container',
-        transition: 'all 0.3s'
-    });
-
-});
-</script>
-
-<style>
-#fadeandscale {
-    -webkit-transform: scale(0.8);
-       -moz-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-            transform: scale(0.8);
-}
-.popup_visible #fadeandscale {
-    -webkit-transform: scale(1);
-       -moz-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-}
-</style>
-
-
-
-
-
-
-
-
-
-<!-- Slide in --><script>
-$(document).ready(function () {
-
-    $('#slidein').popup({
-        focusdelay: 300,
-        outline: true
-    });
-
-});
-</script>
-
-<style>
-#slidein_background {
-    -webkit-transition: all 0.3s;
-       -moz-transition: all 0.3s;
-            transition: all 0.3s;
-}
-#slidein,
-#slidein_wrapper {
-    -webkit-transition: all 0.3s ease-out;
-       -moz-transition: all 0.3s ease-out;
-            transition: all 0.3s ease-out;
-}
-#slidein {
-    -webkit-transform: translateX(0) translateY(-40%);
-       -moz-transform: translateX(0) translateY(-40%);
-        -ms-transform: translateX(0) translateY(-40%);
-            transform: translateX(0) translateY(-40%);
-}
-.popup_visible #slidein {
-    -webkit-transform: translateX(0) translateY(0);
-       -moz-transform: translateX(0) translateY(0);
-        -ms-transform: translateX(0) translateY(0);
-            transform: translateX(0) translateY(0);
-}
-</style>
-
-
-
-
-
-
-
-
-
-<!-- Stand alone -->
-
-<div id="standalone"></div>
-
-
-
-<script>
-$(document).ready(function () {
-
-    $('#standalone').popup({
-      color: 'white',
-      opacity: 1,
-      transition: '0.3s',
-      scrolllock: true
-    });
-
-});
-</script>
-
-<style>
-#standalone {
-    -webkit-transform: scale(0.8);
-       -moz-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-            transform: scale(0.8);
-}
-.popup_visible #standalone {
-    -webkit-transform: scale(1);
-       -moz-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Tooltip -->
 
-<div id="my_tooltip" class="well">
+<div id="my_tooltip" class="well" style=" position: fixed;top: 30%;left: 35%;">
     <a href="#" class="my_tooltip_close" style="float:right;padding:0 0.4em;">×</a>
-    <h4>Tooltip example</h4>
-    <p>Tooltip content will be positioned relative to the opening link.</p>
+    <h4>Entry #32323 </h4>
+    <br><img src="example-image.jpg" style="margin:0 0 20px 20px;" /><p>
+    <strong>Client:</strong> Very nice design. I love it! <br>
+    <strong>Designer:</strong> Thanks. I will be submitting some new designs later. 
+    
 </div>
 
 <script>
@@ -254,103 +79,14 @@ $(document).ready(function () {
 
     $('#my_tooltip').popup({
         type: 'tooltip',
-        vertical: 'top'
+        vertical: 'bottom',
+		horizontal: 'center'
     });
 
 });
 </script>
 
 
-
-
-
-
-
-
-
-
-<!-- Callback events --><script>
-$(document).ready(function () {
-
-    $('#fall').popup({
-        beforeopen: function () {
-            alert('beforeopen');
-        },
-        onopen: function () {
-            alert('onopen');
-        },
-        onclose: function () {
-            alert('onclose');
-        },
-        opentransitionend: function () {
-            alert('opentransitionend');
-        },
-        closetransitionend: function () {
-            alert('closetransitionend');
-        }
-    });
-
-});
-</script>
-
-<style>
-    #fall_background {
-        -webkit-transition: all 3s;
-           -moz-transition: all 3s;
-                transition: all 3s;
-    }
-    #fall_wrapper {
-        -webkit-transition: all 3s;
-           -moz-transition: all 3s;
-                transition: all 3s;
-        -webkit-perspective: 1300px;
-        -moz-perspective: 1300px;
-        perspective: 1300px;
-    }
-    #fall {
-        -webkit-transition: all 3s ease-in;
-        -moz-transition: all 3s ease-in;
-        transition: all 3s ease-in;
-        -webkit-transform-style: preserve-3d;
-        -moz-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-        -webkit-transform: translateZ(600px) rotateX(20deg);
-        -moz-transform: translateZ(600px) rotateX(20deg);
-        -ms-transform: translateZ(600px) rotateX(20deg);
-        transform: translateZ(600px) rotateX(20deg);
-    }
-    .popup_visible #fall {
-        -webkit-transform: translateZ(0px) rotateX(0deg);
-        -moz-transform: translateZ(0px) rotateX(0deg);
-        -ms-transform: translateZ(0px) rotateX(0deg);
-        transform: translateZ(0px) rotateX(0deg);
-    }
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style>
-/* Quick overrides for the demo */
-.well {
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    display:none;
-    margin:1em;
-}
-pre.prettyprint {
-    padding: 9px 14px;
-}
-</style>
 
 
 <!-- Google Prettify syntax highlighting -->
